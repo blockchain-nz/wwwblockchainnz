@@ -1,0 +1,35 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Blockchain NZ"
+themesDir = "themes"
+theme = "hugo-hero-theme"
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.92.0"
+    
+[params]
+  google_analytics_id=""
+
+  [params.logo]
+    mobile = "images/logo-mobile.svg"
+    mobile_height = "36px"
+    mobile_width = "36px"
+    desktop = "images/logo.svg"
+    desktop_height = "29px"
+    desktop_width = "217px"
+    alt = "Blockchain NZ"
+
+[[menu.main]]
+    name = "About"
+    url = "/about/index.html"
+    weight = 1
+
+[[menu.main]]
+    name = "Contact"
+    url = "/contact/index.html"
+    weight = 2
+
+[permalinks]
+  pages = "/:filename/"

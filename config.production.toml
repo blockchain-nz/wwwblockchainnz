@@ -10,7 +10,7 @@ theme = "hugo-hero-theme"
     min = "0.92.0"
     
 [params]
-  google_analytics_id=""
+  google_analytics_id="G-YWZ8BFV71J"
 
   [params.logo]
     mobile = "images/logo-mobile.svg"
@@ -31,12 +31,12 @@ theme = "hugo-hero-theme"
 
 [[menu.main]]
     name = "About"
-    url = "/about/"
+    url = "/about/index.html"
     weight = 1
 
 [[menu.main]]
     name = "Contact"
-    url = "/contact/"
+    url = "/contact/index.html"
     weight = 2
 
 [permalinks]
