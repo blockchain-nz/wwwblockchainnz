@@ -21,14 +21,14 @@ jobs:
     - name: Get latest Hugo version
       id: hugo_version
       run: |
-        latest_version=$(curl --silent "https://api.github.com/repos/gohugoio/hugo/releases/latest" | jq -r .tag_name)
+        latest_version=$(curl --silent "https://api.github.com/repos/gohugoio/hugo/releases/latest" | jq -r .tag_name | sed 's/^v//')
         echo "Latest Hugo version: $latest_version"
         echo "::set-output name=version::$latest_version"
 
     - name: Install Hugo
       run: |
-        wget https://github.com/gohugoio/hugo/releases/download/${{ steps.hugo_version.outputs.version }}/hugo_extended_${{ steps.hugo_version.outputs.version }}_Linux-64bit.tar.gz
-        tar -xzf hugo_extended_${{ steps.hugo_version.outputs.version }}_Linux-64bit.tar.gz
+        wget https://github.com/gohugoio/hugo/releases/download/v${{ steps.hugo_version.outputs.version }}/hugo_${{ steps.hugo_version.outputs.version }}_Linux-64bit.tar.gz
+        tar -xzf hugo_${{ steps.hugo_version.outputs.version }}_Linux-64bit.tar.gz
         sudo mv hugo /usr/local/bin/
 
     # - name: Build Hugo site
